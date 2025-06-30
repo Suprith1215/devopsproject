@@ -1,0 +1,1 @@
+# It includes endpoints for user login and event management, and serves static files for the frontend.

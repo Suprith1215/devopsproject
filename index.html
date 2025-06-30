@@ -126,7 +126,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section><section id="dashboard-section" style="display: none;">
+  <h2>Dashboard</h2>
+  <div>
+    <button onclick="loadEvents()">📅 View Events</button>
+    <button onclick="loadDiscussions()">💬 View Discussions</button>
+    <button onclick="loadMarketplace()">🛒 View Marketplace</button>
+  </div>
+  <div id="output" style="margin-top: 1rem;"></div>
+</section>
+
 
     <!-- Events Section -->
     <section id="events-section" class="main-section" style="display: none;">

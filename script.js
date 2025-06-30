@@ -687,6 +687,7 @@ function formatDate(dateString) {
   })
 }
 
+
 function getCategoryName(category) {
   const categoryNames = {
     innovative: "Innovative Ideas",

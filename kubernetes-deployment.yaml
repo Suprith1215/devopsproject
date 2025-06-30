@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cew-network-deployment
+  labels:
+    app: cew-network
+spec:
+  replicas: 2 # You can adjust the number of replicas based on your needs
+  selector:
+    matchLabels:
+      app: cew-network
+  template:
+    metadata:
+      labels:
+        app: cew-network
+    spec:
+      containers:
+      - name: cew-network
+        image: your-dockerhub-username/cew-network:latest # Replace with your Docker image name and tag
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+      securityContext:
+        runAsUser: 1000 # Corresponds to the 'appuser' UID created in Dockerfile
+        runAsGroup: 1000 # Corresponds to the 'appuser' GID created in Dockerfile
+        fsGroup: 1000
